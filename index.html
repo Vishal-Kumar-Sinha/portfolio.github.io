@@ -624,35 +624,35 @@
                                     <p>v.kr.sinha.99@gmail.com</p>
                                 </div>
                                 <!--contact info item end-->
-                            </div><!--
+                            </div>
                             <h3 class="contact-title padd-15">SEND ME AN EMAIL</h3>
                             <h4 class="contact-sub-title padd-15">I'M VERY RESPONSIVE TO MESSAGES</h4>
-                            //Contact form
+                            <!-- //Contact form -->
                             <div class="row">
-                                <form class="contact-form padd-15" action="https://formsubmit.co/v.kr.sinha.99@gmail.com" method="POST">
+                                <form class="contact-form padd-15" name="submit-to-google-sheet" id="submit-to-google-sheet">
                                     <div class="row">
                                         <div class="form-item col-6 padd-15">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Name" id="sender-name">
+                                                <input type="text" class="form-control" placeholder="Name" name="name" id="sender-name">
                                             </div>
                                         </div>
                                         <div class="form-item col-6 padd-15">
                                             <div class="form-group">
-                                                <input type="email" class="form-control" placeholder="Email" id="sender-email">
+                                                <input type="email" class="form-control" placeholder="Email" name="email" id="sender-email">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-item col-12 padd-15">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Subject" id="sender-subject">
+                                                <input type="text" class="form-control" placeholder="Subject" name="subject" id="sender-subject">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-item col-12 padd-15">
                                             <div class="form-group">
-                                                <textarea name="" class="form-control" id="sender-text" placeholder="Message"></textarea>
+                                                <textarea class="form-control" id="sender-text" placeholder="Message" name="message"></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -661,8 +661,13 @@
                                             <button type="submit" class="btn">Send Message</button>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="form-item col-12 padd-15">
+                                            <span id="msg"></span>
+                                        </div>
+                                    </div>
                                 </form>
-                            </div>-->
+                            </div>
                         </div>
                     </section>
                     <!--Contact end-->
