@@ -130,7 +130,7 @@ const swiper = new Swiper(".swiper", {
     el: ".swiper-scrollbar",
   },
 });
-//form
+/*form
 const scriptURL = "https://script.google.com/macros/s/AKfycbzILCWuXnvi-VFKg6DwL3IrpQSZp7aNbkha4IoPN5Zu_7zE5KO3xIGQVMjfe6dsah4A/exec";
 const form = document.forms["submit-to-google-sheet"];
 const msg = document.getElementById("msg");
@@ -145,4 +145,4 @@ form.addEventListener("submit", (e) => {
       form.reset();
     })
     .catch((error) => console.error("Error!", error.message));
-});
+});*/
