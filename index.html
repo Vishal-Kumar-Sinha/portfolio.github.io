@@ -630,7 +630,7 @@
                             <h4 class="contact-sub-title padd-15">I'M VERY RESPONSIVE TO MESSAGES</h4>
                             <!-- //Contact form -->
                             <div class="row">
-                                <form class="contact-form padd-15" name="submit-to-google-sheet" id="submit-to-google-sheet" action="https://script.google.com/macros/s/AKfycbzILCWuXnvi-VFKg6DwL3IrpQSZp7aNbkha4IoPN5Zu_7zE5KO3xIGQVMjfe6dsah4A/exec">
+                                <form class="contact-form padd-15" name="submit-to-google-sheet" id="submit-to-google-sheet" method="POST" action="https://script.google.com/macros/s/AKfycbzILCWuXnvi-VFKg6DwL3IrpQSZp7aNbkha4IoPN5Zu_7zE5KO3xIGQVMjfe6dsah4A/exec">
                                     <div class="row">
                                         <div class="form-item col-6 padd-15">
                                             <div class="form-group">
@@ -721,5 +721,15 @@
         <script src="js/swiper-bundle.min.js"></script>
         <script src="js/script.js"></script>
         <script src="js/style-switcher.js"></script>
+        <script>
+            const scriptURL = ""
+            const form = document.forms('submit-to-google-sheet')
+            form.addEventListener('submit', e=> {
+                e.preventDefault()
+                fetch(scriptURL, { method: 'POST', body: new formData(form)})
+                .then(response => alert("Thanks for contacting me..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+        </script>
     </body>
 </html>
