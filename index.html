@@ -659,7 +659,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="form-item col-12 padd-15">
-                                            <button type="submit" class="btn" name="submit">Send Message</button>
+                                            <button type="submit" class="btn" name="submit" onclick="sendmsgme();">Send Message</button>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -722,14 +722,21 @@
         <script src="js/script.js"></script>
         <script src="js/style-switcher.js"></script>
         <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbzILCWuXnvi-VFKg6DwL3IrpQSZp7aNbkha4IoPN5Zu_7zE5KO3xIGQVMjfe6dsah4A/exec'
-            const form = document.forms['submit-to-google-sheet']
-            form.addEventListener('submit', e=> {
-                e.preventDefault()
-                fetch(scriptURL, { method: 'POST', body: new formData(form)})
-                .then(response => alert("Thanks for contacting me..."))
-                .catch(error => console.error('Error!', error.message))
-            })
+            function sendmsgme() {
+                const form = document.forms["submit-to-google-sheet"];
+                var phoneno = "+918145063067";
+                var name = document.querySelector('#sender-name').value;
+                var email = document.querySelector('#sender-email').value;
+                var subject = document.querySelector('#sender-subject').value;
+                var message = document.querySelector('#sender-text').value;
+                var urlme = "https://wa.me/"+phoneno+"?text="
+                +"Name     : "+name+"%0a"
+                +"Email ID : "+email+"%0a"
+                +"Subject  : "+subject+"%0a"
+                +"Message  : "+message+"%0a%0a";
+                window.open(urlme);
+                form.reset();
+            }
         </script>
     </body>
 </html>
