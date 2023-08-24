@@ -732,6 +732,7 @@
         <script src="https://smtpjs.com/v3/smtp.js"></script>
         <script>
             function sendmemail(){
+                const form = document.forms["submit-to-google-sheet"];
                 var name = $('#sender-name').val();
                 var emal = $('#sender-email').val();
                 var subj = $('#sender-subject').val();
@@ -753,6 +754,7 @@
                             console.error(message);
                             alert('Error!...Please try again...!')
                         }
+                        form.reset();
                     }
                 );
             }
