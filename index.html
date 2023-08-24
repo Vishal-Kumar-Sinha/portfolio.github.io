@@ -736,7 +736,7 @@
                 var emal = $('#sender-email').val();
                 var subj = $('#sender-subject').val();
                 var msg = $('#sender-text').val();
-                var bdy = 'Name :: '+name+'%0a'+'Email :: '+emal+'%0a'+'Subject :: '+subj+'%0a'+'Message :: '+msg+'%0a%0a';
+                var Body = 'Name :: '+name+'%0a'+'Email :: '+emal+'%0a'+'Subject :: '+subj+'%0a'+'Message :: '+msg+'%0a%0a';
             }
             Email.send({
                 Host : "smtp.gmail.com",
@@ -745,7 +745,7 @@
                 To : 'v.kr.sinha.99@gmail.com',
                 From : "v.kr.sinha.22@gmail.com",
                 Subject : "New mail from Portfolio "+name,
-                Body : bdy
+                Body : Body
             }).then(
                 message => {
                     if(message=='OK') {
