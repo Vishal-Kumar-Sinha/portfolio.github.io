@@ -737,24 +737,25 @@
                 var subj = $('#sender-subject').val();
                 var msg = $('#sender-text').val();
                 var Body = 'Name :: '+name+'<br>Email :: '+emal+'<br>Subject :: '+subj+'<br>Message :: '+msg;
+
+                Email.send({
+                    SecureToken : "9d74662b-544c-4e5a-bb45-818bfccba6cb",
+                    To : 'v.kr.sinha.99@gmail.com',
+                    From : "v.kr.sinha.22@gmail.com",
+                    Subject : "New mail from Portfolio from "+name,
+                    Body : Body
+                }).then(
+                    message => {
+                        if(message=='OK') {
+                            alert('MAil sent successfully');
+                        }
+                        else {
+                            console.error(message);
+                            alert('Error!...Please try again...!')
+                        }
+                    }
+                );
             }
-            Email.send({
-                SecureToken : "9d74662b-544c-4e5a-bb45-818bfccba6cb",
-                To : 'v.kr.sinha.99@gmail.com',
-                From : "v.kr.sinha.22@gmail.com",
-                Subject : "New mail from Portfolio from "+name,
-                Body : Body
-            }).then(
-                message => {
-                    if(message=='OK') {
-                        alert('MAil sent successfully');
-                    }
-                    else {
-                        console.error(message);
-                        alert('Error!...Please try again...!')
-                    }
-                }
-            );
         </script>
     </body>
 </html>
