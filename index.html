@@ -732,10 +732,10 @@
         <script src="https://smtpjs.com/v3/smtp.js"></script>
         <script>
             function sendmemail(){
-                var name = $('#sender-name').value();
-                var emal = $('#sender-email').value();
-                var subj = $('#sender-subject').value();
-                var msg = $('#sender-text').value();
+                var name = $('#sender-name').val();
+                var emal = $('#sender-email').val();
+                var subj = $('#sender-subject').val();
+                var msg = $('#sender-text').val();
                 var Body = 'Name :: '+name+'<br>Email :: '+emal+'<br>Subject :: '+subj+'<br>Message :: '+msg;
 
                 Email.send({
