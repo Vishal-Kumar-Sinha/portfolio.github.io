@@ -637,7 +637,7 @@
                             <h4 class="contact-sub-title padd-15">I'M VERY RESPONSIVE TO MESSAGES</h4>
                             <!-- //Contact form -->
                             <div class="row">
-                                <form class="contact-form padd-15" name="submit-to-google-sheet" id="submit-to-google-sheet" method="POST">
+                                <form class="contact-form padd-15" name="submit-to-google-sheet" id="submit-to-google-sheet" action="javascript:sendmemail()" method="POST">
                                     <div class="row">
                                         <div class="form-item col-6 padd-15">
                                             <div class="form-group">
@@ -666,7 +666,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="form-item col-12 padd-15">
-                                            <button type="submit" class="btn" name="submit" onclick="sendmsgme();">Send Message</button>
+                                            <button type="submit" class="btn" name="submit">Send Message</button>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -728,22 +728,35 @@
         <script src="js/swiper-bundle.min.js"></script>
         <script src="js/script.js"></script>
         <script src="js/style-switcher.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
         <script>
-            function sendmsgme() {
-                const form = document.forms["submit-to-google-sheet"];
-                var phoneno = "+918145063067";
-                var name = document.querySelector('#sender-name').value;
-                var email = document.querySelector('#sender-email').value;
-                var subject = document.querySelector('#sender-subject').value;
-                var message = document.querySelector('#sender-text').value;
-                var urlme = "https://wa.me/"+phoneno+"?text="
-                +"Name     : "+name+"%0a"
-                +"Email ID : "+email+"%0a"
-                +"Subject  : "+subject+"%0a"
-                +"Message  : "+message+"%0a%0a";
-                window.open(urlme, '_blank').focus();
-                
+            function sendmemail(){
+                var name = $('#sender-name').val();
+                var emal = $('#sender-email').val();
+                var subj = $('#sender-subject').val();
+                var msg = $('#sender-text').val();
+                var body = 'Name :: '+name+'%0a'+'Email :: '+emal+'%0a'+'Subject :: '+subj+'%0a'+'Message :: '+msg+'%0a%0a';
             }
+            Email.send({
+                Host : "smtp.gmail.com",
+                Username : "v.kr.sinha.22@gmail.com",
+                Password : "Vishal@1999",
+                To : 'v.kr.sinha.99@gmail.com',
+                From : "v.kr.sinha.22@gmail.com",
+                Subject : "New mail from Portfolio",
+                Body : body
+            }).then(
+                message => {
+                    if(message=='OK') {
+                        alert('MAil sent successfully');
+                    }
+                    else {
+                        console.error(message);
+                        alert('Error!...Please try again...!')
+                    }
+                }
+            );
         </script>
     </body>
 </html>
