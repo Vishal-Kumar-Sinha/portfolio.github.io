@@ -2,22 +2,26 @@
 :root
 {
     --p-color:#3742fa;
-    --bg-black-900:#151515;
-    --bg-black-100:#222222;
+    --bg-black-900:rgb(21, 21, 21);
+    --bg-black-100:rgb(34, 34, 34);
     --bg-black-50:#393939;
-    --text-black-900:#ffffff;
-    --text-black-700:#e9e9e9;
+    --text-black-900:rgb(255, 255, 255);
+    --text-black-700:rgb(233, 233, 233);
     --shadow-black:rgba(186, 186, 186, 0.11);
+    --bkgrd-black:radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
+    --aside-black:radial-gradient(circle at 24.1% 68.8%, rgb(0, 0, 0) 0%, rgb(50, 50, 50) 99.4%);
 }
 body.dark
 {
     --p-color:#3742fa;
-    --bg-black-900:#f2f2fc;
-    --bg-black-100:#fdf9ff;
-    --bg-black-50:#e8dfec;
+    --bg-black-900:rgb(242, 242, 252);
+    --bg-black-100:rgb(253, 249, 255);
+    --bg-black-50:rgb(232, 223, 236);
     --text-black-900:#302e4d;
     --text-black-700:#504e70;
     --shadow-black:rgba(51, 49, 80, 0.11);
+    --bkgrd-black:radial-gradient(circle at 24.1% 68.8%, rgb(205, 205, 205) 0%, rgb(255, 255, 255) 99.4%);
+    --aside-black:radial-gradient(circle at 24.1% 68.8%, rgb(255, 255, 255) 0%, rgb(205, 205, 205) 99.4%);
 }
 body
 {
@@ -43,7 +47,9 @@ ul
 }
 .section
 {
-    background: var(--bg-black-900);
+    /*background: linear-gradient(109.6deg, rgb(6, 2, 2) 32.4%, rgb(137, 30, 47) 98.8%);
+     background: radial-gradient(var(--skin-color), var(--bg-black-900)); */
+    background: var(--bkgrd-black);
     min-height: 100vh;
     display: block;
     padding: 0 30px;
@@ -171,13 +177,14 @@ ul
 .aside
 {
     width: 270px;
-    background: var(--bg-black-100);
+    background: /*var(--bg-black-100);*/var(--aside-black);
+    /* background: radial-gradient(var(--skin-color), var(--bg-black-100)); */
     position: fixed;
     left: 0;
     top: 0;
     padding: 30px;
     height: 100%;
-    border-right: 1px solid var(--bg-black-50);
+    /*border-right: 1px solid var(--bg-black-50);*/
     display: flex;
     justify-content: center;
     align-items: center;
